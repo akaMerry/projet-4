@@ -1,9 +1,16 @@
+// Toggle navbar and icon (responsive)
 function editNav() {
   var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
+  var i = document.querySelector(".icon i");
+
+  x.classList.toggle("responsive");
+
+  if (i.classList.contains("fa-bars")) {
+    i.classList.remove("fa", "fa-bars");
+    i.classList.add("fa-solid", "fa-x");
   } else {
-    x.className = "topnav";
+    i.classList.remove("fa-solid", "fa-x");
+    i.classList.add("fa", "fa-bars");
   }
 }
 
@@ -11,13 +18,20 @@ function editNav() {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
-
-// launch modal event
-modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
+const modalCross = document.querySelectorAll(".close");
 
 // launch modal form
 function launchModal() {
   modalbg.style.display = "block";
 }
 
+// launch modal event
+modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
+// close modal form
+function closeModal() {
+  modalbg.style.display = "none";
+}
+
+// close modal event
+modalCross.forEach((span) => span.addEventListener("click", closeModal));

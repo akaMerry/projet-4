@@ -4,39 +4,33 @@
     <meta charset="utf-8" />
     <title>Reservation</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="modal.css" />
+    <link rel="stylesheet" href="./src/assets/modal.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
     <div class="topnav" id="myTopnav">
       <div class="header-logo">
-        <img
-          alt="logo"
-          src="./src/assets/Logo.png"
-          width="auto"
-          height="auto"
-        />
-        <!-- il faut retirer width et height -->
+        <img alt="logo" src="./src/assets/logo.png" />
       </div>
       <div class="main-navbar">
         <a href="#"><span>Détails de l'événement</span></a>
         <a href="#"><span>À propos</span></a>
         <a href="#"><span>Contact</span></a>
         <a href="#"><span>Événements passés</span></a>
-        <a href="javascript:void(0);" class="icon" onclick="editNav()">
-          <!-- le js ici ? -->
-          <i class="fa fa-bars"></i>
-        </a>
       </div>
+      <a href="javascript:void(0);" class="icon" onclick="editNav()">
+        <i class="fa fa-bars fa-lg"></i>
+      </a>
     </div>
     <main>
       <div class="hero-section">
@@ -49,12 +43,12 @@
             Vous aimez jouer ? Notre prochain événement gaming est ouvert aux
             réservations... Places limitées !
           </p>
-          <button class="btn-signup modal-btn">je m'inscris</button>
+          <button class="btn-signup modal-btn">Je m'inscris</button>
         </div>
         <div class="hero-img">
           <img src="./src/assets/bg_img.jpg" alt="img" />
         </div>
-        <button class="btn-signup modal-btn">je m'inscris</button>
+        <button class="btn-signup modal-btn">Je m'inscris</button>
       </div>
 
       <div class="bground">
@@ -224,6 +218,6 @@
     <footer>
       <p class="copyrights">Copyright 2014 - 2022, GameOn Inc.</p>
     </footer>
-    <script src="modal.js"></script>
+    <script src="./src/assets/modal.js"></script>
   </body>
 </html>
