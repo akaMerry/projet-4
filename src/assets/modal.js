@@ -1,7 +1,7 @@
 // DOM Elements
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
-const modalClose = document.querySelectorAll(".close");
+const modalClose = document.querySelectorAll(".close, .close-btn");
 const form = document.querySelector("form");
 const formComplete = document.querySelector(".form-complete");
 const formData = document.querySelectorAll(".formData");
@@ -64,7 +64,7 @@ function errorMessage(input) {
   } else if (input.validity.rangeOverflow) {
     input.setCustomValidity("La valeur est trop grande.");
   } else if (input.validity.stepMismatch) {
-    input.setCustomValidity("");
+    input.setCustomValidity("La valeur est incorrecte.");
   } else {
     input.setCustomValidity("");
   }
@@ -89,15 +89,15 @@ inputs.forEach((input) => {
 
 // Check every input validity
 function validate() {
-  let isValid = true;
+  let valid = true;
 
   inputs.forEach((input) => {
     if (!input.checkValidity()) {
-      isValid = false;
+      valid = false;
     }
   });
 
-  return isValid;
+  return valid;
 }
 
 // Submit form
@@ -108,8 +108,7 @@ form.addEventListener("submit", function (event) {
       form.style.display = "none";
       formComplete.style.display = "block";
     }
-
-    // creation of an object containing validated user data
+    // creation of an object containing valid user data
     const data = new FormData(form);
     const userData = Object.fromEntries(data.entries());
     console.log(userData);

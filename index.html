@@ -63,7 +63,6 @@
               method="get"
               onsubmit="return validate();"
             >
-              <!-- vérifier le onsubmit -->
               <div class="formData">
                 <label for="first">Prénom</label><br />
                 <input
@@ -206,7 +205,7 @@
                   checked
                   required
                 />
-                <label class="checkbox2-label" for="checkbox1" required>
+                <label class="checkbox2-label" for="checkbox1">
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
@@ -219,24 +218,22 @@
                 <br />
               </div>
               <input
-                class="btn-submit"
-                class="button"
+                class="btn-submit button"
                 type="submit"
                 value="C'est parti"
               />
             </form>
             <div class="form-complete">
               <div class="form-complete-txt">
-                <span
-                  >Merci pour <br />
-                  votre inscription</span
-                >
+                <p>
+                  Merci pour <br />
+                  votre inscription
+                </p>
               </div>
               <div class="form-complete-btn">
                 <input
-                  class="btn-close"
-                  class="button"
-                  class="close"
+                  type="button"
+                  class="btn-submit button close-btn"
                   value="Fermer"
                 />
               </div>

@@ -306,11 +306,9 @@ input[data-error]::after {
   cursor: pointer;
   border: 0;
 }
-.btn-submit,
-.btn-close {
+.btn-submit {
   background: var(--gameon-red);
-  position: relative;
-  display: flex;
+  display: block;
   margin: 1rem auto 0 auto;
   border-radius: 8px;
   font-size: 1rem;
@@ -324,22 +322,20 @@ input[data-error]::after {
   display: none;
   flex-direction: column;
   align-items: center;
-  width: 420px;
+  width: 100%;
   height: 667.5px;
 }
 .form-complete-txt {
+  display: flex;
+  text-align: center;
   align-items: center;
   justify-content: center;
   height: 91%;
 }
-.form-complete-txt span {
+.form-complete-txt p {
   font-family: var(--font-default);
   font-size: 2rem;
   font-weight: 400;
-}
-.form-complete-btn {
-  display: flex;
-  bottom: 0;
 }
 /* custom select styles */
 .custom-select {
