@@ -10,14 +10,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <script src="./src/assets/modal.js" defer></script>
   </head>
   <body>
     <div class="topnav" id="myTopnav">
@@ -30,7 +28,8 @@
         <a href="#"><span>Contact</span></a>
         <a href="#"><span>Événements passés</span></a>
       </div>
-      <a href="javascript:void(0);" class="icon" onclick="editNav()">
+      <!-- faire une action v -->
+      <a class="icon">
         <i class="fa fa-bars fa-lg"></i>
       </a>
     </div>
@@ -57,13 +56,7 @@
         <div class="content">
           <span class="close"></span>
           <div class="modal-body">
-            <form
-              novalidate
-              name="reserve"
-              action="index.html"
-              method="get"
-              onsubmit="return validate();"
-            >
+            <form novalidate name="reserve" action="index.html" method="get">
               <div class="formData">
                 <label for="first">Prénom</label><br />
                 <input
@@ -120,13 +113,13 @@
                   class="text-control"
                   id="quantity"
                   name="quantity"
-                  required
                   min="0"
                   max="99"
+                  required
                 /><br />
               </div>
               <div class="formData">
-                <label>
+                <label for="location">
                   À quel tournoi souhaitez-vous participer cette année ? </label
                 ><br />
                 <input
@@ -203,7 +196,6 @@
                   class="checkbox-input"
                   type="checkbox"
                   id="checkbox1"
-                  checked
                   required
                 />
                 <label class="checkbox2-label" for="checkbox1">
@@ -211,6 +203,8 @@
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
                 <br />
+              </div>
+              <div class="formData">
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2">
                   <span class="checkbox-icon"></span>
@@ -246,5 +240,6 @@
     <footer>
       <p class="copyrights">Copyright 2014 - 2022, GameOn Inc.</p>
     </footer>
+    <script src="./src/assets/modal.js" type="module"></script>
   </body>
 </html>

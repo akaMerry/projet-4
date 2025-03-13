@@ -181,9 +181,8 @@ input {
   font-size: 0.7rem;
   color: var(--alert-color);
   display: block;
-  margin-top: 0.6rem;
+  margin-top: 0.3rem;
   text-align: left;
-  line-height: 0.3;
   opacity: 0;
   transition: 0.3s;
 }
@@ -512,7 +511,7 @@ footer {
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     position: absolute;
     z-index: 2;
     top: 4.5rem;
@@ -520,14 +519,12 @@ footer {
   }
   .topnav.responsive .main-navbar a {
     display: flex;
-    text-align: center;
     margin: 0;
+    font-size: 1rem;
   }
   .topnav.responsive .main-navbar a:hover {
     width: 100%;
     text-decoration: none;
-    justify-content: center;
-    align-items: center;
   }
   .hero-section {
     display: flex;
