@@ -49,8 +49,39 @@ modalClose.forEach((element) => element.addEventListener("click", closeModal));
 form.addEventListener("submit", function (event) {
   event.preventDefault();
   let valid = true;
+  // Regex patterns
+  const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\-']+$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   // checking the validity of each input and displaying a message in case of error
   inputs.forEach((input) => {
+    // switch for some double validation
+    const name = input.name;
+    const value = input.value.trim();
+    let customError = "";
+    switch (name) {
+      case "first":
+      case "last":
+        if (value.length < 2) {
+          customError = "Le champ doit contenir au moins 2 caractères.";
+        } else if (!nameRegex.test(value)) {
+          customError = "Ce champ ne peut pas contenir d'espace.";
+        }
+        break;
+
+      case "email":
+        if (!emailRegex.test(value)) {
+          customError =
+            "Veuillez entrer une adresse e-mail valide contenant @ et .";
+        }
+        break;
+      case "terms":
+        if (!input.checked) {
+          customError = "Vous devez accepter les conditions.";
+        }
+        break;
+    }
+    // custom error if needed
+    input.setCustomValidity(customError);
     if (!input.checkValidity()) {
       input.closest(".formData").setAttribute("data-error-visible", "true");
       input
